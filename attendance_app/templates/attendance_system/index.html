@@ -1,0 +1,56 @@
+{% extends "attendance_system/layout.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'attendance/landing/styles.css' %}">
+
+{% block body %}
+{% block script %}
+    <script src="{% static 'attendance/chart.js' %}"></script>
+{% endblock %}
+<div>
+    {% if user.is_authenticated %}
+
+        <div align="center">
+            <canvas id="myChart" width="700" height="350"></canvas>
+        </div>
+        <br>
+        <br>
+        <div>
+            <p align="center" style="font-size:20px" >The minimum attendance requirement is at least <b>75%</b> per subject.</p>
+        </div>
+
+
+    {% else %}
+
+    <div >
+
+        <div class="card shadow-lg mb-3 bg-white rounded p-3">
+            <div>
+                <p style="font-size: 50px; letter-spacing: 1px;">Location-based Class Attendance System</p>
+            </div> 
+
+            <div class="card-body" >
+                <p style="font-size: 30px;">Take your attendance record at just one click !</p><br>
+                <p width="25%">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus neque convallis tellus pharetra
+                    pharetra.<br>Fusce a orci quis ante posuere porta mollis a orci. Proin sed arcu in ante ornare interdum.
+                    Vestibulum eget laoreet nulla.<br> Etiam dictum, nisl non maximus rutrum, ante enim cursus mauris, ac laoreet
+                    turpis neque et mi.<br><br>Ut finibus sem turpis, at blandit ex tempor in.Ut nulla nibh, sodales et leo id,
+                    viverra porttitor nisi.<br>Nunc tellus turpis, finibus eu ligula sed, ornare finibus leo. Suspendisse
+                    consectetur feugiat consectetur.<br>Phasellus vel finibus dolor.
+                </p><br>
+                <a href="#">Learn More ></a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </body>
+
+
+    {% endif %}
+</div>
+
+{% endblock body %})
+

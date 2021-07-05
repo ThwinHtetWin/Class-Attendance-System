@@ -1,0 +1,53 @@
+{% extends "attendance_system/layout.html" %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'attendance/enrollment.css' %}">
+
+<div align="center" class="m-3">
+    <b>Subjects for {{attending_year}} students </b>are as follow.
+</div> 
+<table class="table table-bordered shadow-lg" style="width:50%" align="center">
+    <thead class="thead-light">
+        <tr align="center">
+            <th scope="col">Module number</th>
+            <th scope="col">Module name</th>
+        </tr>
+       
+    </thead>
+    <tbody>
+        {% for subject in subjects %}
+        <tr align="center">
+            <td scope="row">{{ subject.subject.module_no }} </td>
+            <td scope="row">{{ subject.subject.module_name }} </td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<div align="center" class="m-3">
+   You are going to enroll the<b> {{attending_year}} class </b>with the following information.
+</div> 
+
+<table class="table table-bordered shadow-lg" style="width:30%" align="center">
+    <thead class="thead-light">
+        <tr align="center">
+            <th scope="col">Roll number</th>     
+            <th scope="col">Name</th>     
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr align="center">
+            <td>{{ roll_number }}</td>
+            <td>{{ name }}</td>
+        </tr>
+    </tbody>
+</table>
+<div align="center">
+    <form action="{% url 'enrollment' %}" method=POST>
+    {% csrf_token %}
+    <button class="btn btn-success btn-sm" type="submit">Enroll</button>
+</form>
+</div>
+
+{% endblock body %}

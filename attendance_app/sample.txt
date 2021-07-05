@@ -1,0 +1,79 @@
+Monday - 2021-06-28
+Subject         From        To 
+
+ENG-2001        9:00am      9:50am
+CS-2103(Tuto)   10:00am     11:50am
+CS-2104         1:00pm      2:50pm
+
+------------------------------------
+
+Tuesday - 2021-06-29
+Subject        From         To
+
+ENG-2001       9:00am       9:50am
+CS-2102        10:00am      11:50am
+CS-2101        1:00pm       1:50pm
+CS-2104        2:00am       3:50pm
+
+------------------------------------
+
+Wednesday - 2021-06-30
+Subject        From         To
+
+CS-2103        9:00am       10:50am
+CS-2102        11:00am      11:50am
+CS-2101        1:00pm       2:50pm
+
+------------------------------------
+
+Thursday
+Subject        From         To
+
+ENG-2001       8:00am       9:50am
+CS-2105(Lab)   10:00am      11:50am
+CS-2101(Java)  1:00pm       2:50pm
+
+------------------------------------
+
+Friday
+Subject        From         To
+
+CS-2103        9:00am       9:50am
+CS-2105        10:00am      11:50am
+CS-2102(Tuto)  1:00pm       2:50pm
+
+Total timetable - 16.
+------------------------------------
+
+module_no : module_name
+
+CS-2101   : Reqirement Engineering 1
+CS-2102   : Software Design 1
+CS-2103   : Software Testing,Operation and Maintainance 1
+CS-2104   : Fundamental DBMS 1
+CS-2105   : Computational Mathematics
+ENG-2001  : English
+
+------------------------------------
+
+Sample classrooms
+
+CS-ROOM-01 : First year classroom
+CS-ROOM-02 : Second year classroom
+CS-ROOM-03 : Third year classroom
+CS-ROOM-04 : Fourth year classroom
+CS-ROOM-01(Hons) : First year honus classroom
+CS-ROOM-02(Hons) : Second year honus classroom
+CS-ROOM-03(Hons) : Third year honus classroom
+CS-ROOM-01(Master) : First year master classroom
+CS-ROOM-02(Master) : Second year master classroom
+
+------------------------------------
+
+Steps to add new records to database -
+1. add new classroom
+2. add new subject
+3. add new classroom-subject
+4. add new timetable
+
+Here, we have done for classroom configurations.

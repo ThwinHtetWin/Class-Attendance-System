@@ -1,0 +1,76 @@
+{% extends "attendance_system/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+{% block script %}
+    <script src="{% static 'attendance/attendance.js' %}"></script>
+{% endblock %}
+
+<style>
+.hide {
+    display:none
+}
+</style>
+
+{% if day == "Saturday" or day == "Sunday" %}
+<p align="center" >Today is {{day}}.<br>There is no class on weekend.</p>
+{% else %}
+<div align='center' class='m-3'>
+    <p><b>{{day}} Timetable</b></p>
+</div>
+
+<div class='m-2'>
+
+     <div id="attend-success" class="alert alert-success alert-dismissible fade show hide" role="alert">
+        <button type="button" class="close btn shadow-none" data-dismiss="alert" >&times;</button>
+        <p align='center' class="mb-0">attended success.</p>
+    </div>
+     <div id="attend-fail" class="alert alert-warning alert-dismissible fade show hide" role="alert">
+        <button type="button" class="close btn shadow-none" data-dismiss="alert" >&times;</button>
+        <p align='center' class="mb-0">Attended fail for the following reasons.</p>
+        <hr>
+        <div align="center">
+            <li>You may be late.</li>
+            <li>You may be outside of the class.</li>
+            <li>You may be already attended.</li>
+        </div>
+    </div>
+
+    <table class="table table-bordered shadow table-responsive-sm btn-table" style="width:70%" align="center">
+    <thead class="thead-light">
+        <tr align="center">
+
+            <th scope="col">Time</th>
+            <th scope="col">Module number</th>
+            <th scope="col">Module name</th>
+            <th scope="col">#</th>
+        </tr>
+       
+    </thead>
+    
+    <tbody>
+        {% for item in subjects %}
+        <tr align="center">
+            <td scope="row">{{ item.start_time }}:{{ item.end_time }} </td>
+            <td scope="row">{{ item.subject.subject.module_no }} </td>
+            <td scope="row">{{ item.subject.subject.module_name }} </td>
+
+            {% if item.id in attended_subject_id %}
+            <td ><button disabled type='button' id="{{item.id}}" class="btn btn-sm btn-success btn-sm px-3 shadow-none" onclick="add_attendance({{item.id}})">Attended</button></td>
+            {% else %}
+            <td ><button type='button' id="{{item.id}}" class="btn btn-sm btn-success btn-sm px-3 shadow-none" onclick="add_attendance({{item.id}})">Attend</button></td>
+
+            {% endif %}
+
+
+
+        </tr>
+
+{% endfor %}
+    </tbody>
+</table>
+
+</div>
+{% endif %}
+{% endblock body %})

@@ -1,0 +1,60 @@
+{% extends "attendance_system/layout.html" %}
+
+{% block body %}
+
+<h3 align='center'>Timetable for {{ attending_year }}</h3>
+
+
+{% for day,t in timetable.items %}
+    <table class="table table-bordered shadow table-responsive-sm btn-table" style="width:50%" align="center">
+    <p align="center">{{day}}</p>
+        <thead class="thead-light">
+            <tr align="center">
+
+                <th scope="col">Module number</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+            </tr>
+            
+        </thead>
+        {% for module_no,time in t.items %}
+            <tbody>
+                <tr align="center" >
+                    <td scope="row">{{module_no}}</td>
+                    <td scope="row">{{time.start_time}}</td>
+                    <td scope="row">{{time.end_time}}</td>
+                </tr>
+            </tbody>       
+        {% endfor %}
+ 
+    </table>
+    
+
+            <tbody>
+
+
+            </tbody>
+
+        
+{% endfor %}
+
+
+{% endblock body %}
+
+
+{{timetable}}
+<hr>
+
+{% for s,t in timetable.items %}
+    day:{{s}}
+    <br> t: {{t}} <br><br>
+
+        {% for u,v in t.items %}
+        uuuuu:{{u}} <br><br> ENG-2001 
+        vvvvv:{{v.start_time}} <br><br> 9:00am 
+        vvvvv:{{v.end_time}} <br><br> 9:50am 
+
+ 
+    {% endfor %}
+
+{% endfor %}
